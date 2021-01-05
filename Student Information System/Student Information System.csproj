@@ -78,11 +78,6 @@
       <DependentUpon>StudenRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="Student.cs" />
-    <Compile Include="studentinfoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>studentinfoDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="StudentScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,17 +153,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="studentinfoDataSet.xsc">
-      <DependentUpon>studentinfoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="studentinfoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>studentinfoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="studentinfoDataSet.xss">
-      <DependentUpon>studentinfoDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
