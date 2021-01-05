@@ -57,6 +57,7 @@
             this.lessonErrorText = new System.Windows.Forms.Label();
             this.passwordErrorText = new System.Windows.Forms.Label();
             this.usernameError = new System.Windows.Forms.Label();
+            this.emailErrorText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -374,12 +375,21 @@
             this.usernameError.Size = new System.Drawing.Size(0, 17);
             this.usernameError.TabIndex = 33;
             // 
+            // emailErrorText
+            // 
+            this.emailErrorText.AutoSize = true;
+            this.emailErrorText.Location = new System.Drawing.Point(136, 504);
+            this.emailErrorText.Name = "emailErrorText";
+            this.emailErrorText.Size = new System.Drawing.Size(0, 17);
+            this.emailErrorText.TabIndex = 34;
+            // 
             // StudenRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Student_Information_System.Properties.Resources.backgroundDefault;
             this.ClientSize = new System.Drawing.Size(967, 714);
+            this.Controls.Add(this.emailErrorText);
             this.Controls.Add(this.usernameError);
             this.Controls.Add(this.passwordErrorText);
             this.Controls.Add(this.lessonErrorText);
@@ -451,5 +461,6 @@
         private System.Windows.Forms.Label lessonErrorText;
         private System.Windows.Forms.Label passwordErrorText;
         private System.Windows.Forms.Label usernameError;
+        private System.Windows.Forms.Label emailErrorText;
     }
 }

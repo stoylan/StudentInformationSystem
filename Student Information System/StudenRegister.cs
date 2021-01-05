@@ -44,6 +44,8 @@ namespace Student_Information_System
             lessonErrorText.BackColor = System.Drawing.Color.Transparent;
             lessonErrorText.ForeColor = System.Drawing.Color.Red;
             passwordErrorText.ForeColor = System.Drawing.Color.Red;
+            emailErrorText.ForeColor = System.Drawing.Color.Red;
+            emailErrorText.BackColor = System.Drawing.Color.Transparent;
 
         }
 
@@ -54,6 +56,7 @@ namespace Student_Information_System
             lessonErrorText.Hide();
             passwordErrorText.Hide();
             usernameError.Hide();
+            emailErrorText.Hide();
             if (String.IsNullOrEmpty(usernameTextBox.Text) || String.IsNullOrEmpty(passwordTextBox.Text) || String.IsNullOrEmpty(nameTextBox.Text) || String.IsNullOrEmpty(surnameTextBox.Text) || String.IsNullOrEmpty(studentNoTextBox.Text) || String.IsNullOrEmpty(phoneNoBox.Text) || String.IsNullOrEmpty(emailTextBox.Text)) 
             {
                 succesful = false;
@@ -81,7 +84,7 @@ namespace Student_Information_System
             bool studentnoCheck = regexNum.IsMatch(studentNoTextBox.Text);
             bool phonenoCheck = regexNum.IsMatch(phoneNoBox.Text);
             bool passwordCheck = regexPassword.IsMatch(passwordTextBox.Text);
-
+            bool emailCheck = rs.checkEmail(emailTextBox.Text);
             if (!passwordCheck)
             {
                 succesful = false;
@@ -103,11 +106,19 @@ namespace Student_Information_System
                 usernameError.Text = "This username is used. Please try again different username";
             }
 
+            if (!emailCheck)
+            {
+                succesful = false;
+                emailErrorText.Show();
+                emailErrorText.Text = "E-mail must be valid format. Like example@gmail.com";
+
+            }
+
 
        
             if (succesful)
             {
-                Student student = new Student(usernameTextBox.Text, passwordTextBox.Text, nameTextBox.Text, surnameTextBox.Text, float.Parse(studentNoTextBox.Text), float.Parse(phoneNoBox.Text), emailTextBox.Text);
+                Student student = new Student(usernameTextBox.Text, passwordTextBox.Text, nameTextBox.Text, surnameTextBox.Text, studentNoTextBox.Text, phoneNoBox.Text, emailTextBox.Text);
                 Lesson lesson = new Lesson();
                 RegisterLesson rl = new RegisterLesson();
                 rs.registerStudent(student.Username, student.Password, student.Name, student.Surname,student.Studentno, student.Phonenum, student.Email);

@@ -39,6 +39,8 @@ namespace Student_Information_System
 
         private void TeacherScreen_Load(object sender, EventArgs e)
         {
+            // TODO: Bu kod satırı 'studentinfoDataSet.lessonlog' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.lessonlogTableAdapter.Fill(this.studentinfoDataSet.lessonlog);
             if (teacherName == "admin")
             {
                 lesson.fillGrid("Mathematic", mathematicDataGridView);

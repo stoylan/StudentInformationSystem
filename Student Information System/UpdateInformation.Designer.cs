@@ -103,7 +103,7 @@ namespace Student_Information_System
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(213, 375);
+            this.passwordTextBox.Location = new System.Drawing.Point(213, 374);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(141, 22);
             this.passwordTextBox.TabIndex = 5;

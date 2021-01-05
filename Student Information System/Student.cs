@@ -14,11 +14,11 @@ namespace Student_Information_System
         private string password;
         private string name;
         private string surname;
-        private float studentno;
-        private float phonenum;
+        private string studentno;
+        private string phonenum;
         private string email;
         Database db = new Database();
-        public Student(string username, string password, string name, string surname, float studentno, float phonenum, string email)
+        public Student(string username, string password, string name, string surname, string studentno, string phonenum, string email)
         {
             this.Username = username;
             this.Password = password;
@@ -75,7 +75,7 @@ namespace Student_Information_System
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
         public string Email { get => email; set => email = value; }
-        public float Studentno { get => studentno; set => studentno = value; }
-        public float Phonenum { get => phonenum; set => phonenum = value; }
+        public string Studentno { get => studentno; set => studentno = value; }
+        public string Phonenum { get => phonenum; set => phonenum = value; }
     }
 }

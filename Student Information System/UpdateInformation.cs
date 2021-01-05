@@ -84,7 +84,7 @@ namespace Student_Information_System
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
-            repasswordTextBox.UseSystemPasswordChar = true;
+            passwordTextBox.UseSystemPasswordChar = true;
         }
 
         private void repasswordTextBox_TextChanged(object sender, EventArgs e)

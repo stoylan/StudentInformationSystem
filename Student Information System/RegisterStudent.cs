@@ -12,7 +12,7 @@ namespace Student_Information_System
     {
         Database db = new Database();
         bool hasSameUsername;
-        public void registerStudent(string Username, string Password, string Name, string Surname, float Studentno, float Phonenum, string Email)
+        public void registerStudent(string Username, string Password, string Name, string Surname, string Studentno, string Phonenum, string Email)
         {
             db.Connection.Open();
             string query = "insert into studentlog(Username,password,Name,Surname,Studentno,Phoneno,Email) values('" + Username + "','" + Password + "','" + Name + "','" + Surname + "','" + Studentno+ "','" + Phonenum + "','" + Email + "');";
@@ -39,6 +39,19 @@ namespace Student_Information_System
             db.Connection.Close();
 
             return hasSameUsername;
+        }
+
+        public bool checkEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

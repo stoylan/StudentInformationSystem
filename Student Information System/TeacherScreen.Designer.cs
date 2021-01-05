@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MathematicPage = new System.Windows.Forms.TabPage();
@@ -97,6 +98,9 @@
             this.german_finalbox = new System.Windows.Forms.TextBox();
             this.german_vizebox = new System.Windows.Forms.TextBox();
             this.german_gridview = new System.Windows.Forms.DataGridView();
+            this.studentinfoDataSet = new Student_Information_System.studentinfoDataSet();
+            this.lessonlogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lessonlogTableAdapter = new Student_Information_System.studentinfoDataSetTableAdapters.lessonlogTableAdapter();
             this.tabControl1.SuspendLayout();
             this.MathematicPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mathematicDataGridView)).BeginInit();
@@ -111,6 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bio_gridview)).BeginInit();
             this.German.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.german_gridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentinfoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonlogBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1003,6 +1009,20 @@
             this.german_gridview.TabIndex = 12;
             this.german_gridview.MouseClick += new System.Windows.Forms.MouseEventHandler(this.german_gridview_MouseClick);
             // 
+            // studentinfoDataSet
+            // 
+            this.studentinfoDataSet.DataSetName = "studentinfoDataSet";
+            this.studentinfoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lessonlogBindingSource
+            // 
+            this.lessonlogBindingSource.DataMember = "lessonlog";
+            this.lessonlogBindingSource.DataSource = this.studentinfoDataSet;
+            // 
+            // lessonlogTableAdapter
+            // 
+            this.lessonlogTableAdapter.ClearBeforeFill = true;
+            // 
             // TeacherScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1035,6 +1055,8 @@
             this.German.ResumeLayout(false);
             this.German.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.german_gridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentinfoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonlogBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1110,5 +1132,8 @@
         private System.Windows.Forms.TextBox german_finalbox;
         private System.Windows.Forms.TextBox german_vizebox;
         private System.Windows.Forms.DataGridView german_gridview;
+        private studentinfoDataSet studentinfoDataSet;
+        private System.Windows.Forms.BindingSource lessonlogBindingSource;
+        private studentinfoDataSetTableAdapters.lessonlogTableAdapter lessonlogTableAdapter;
     }
 }
