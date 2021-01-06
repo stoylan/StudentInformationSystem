@@ -97,5 +97,18 @@ namespace Student_Information_System
             sc.Show();
             this.Close();
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            DialogResult areuSure = MessageBox.Show("Do you want to remove your account ?", "Confirmation", MessageBoxButtons.YesNo);
+            if (areuSure == DialogResult.Yes)
+            {
+                student.deleteStudent(studentID);
+                StartScreen sc = new StartScreen();
+                sc.Show();
+                this.Close();
+            }
+
+        }
     }
 }

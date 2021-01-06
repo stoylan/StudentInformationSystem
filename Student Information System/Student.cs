@@ -68,6 +68,17 @@ namespace Student_Information_System
             db.Connection.Close();
             return StudentName;
         }
+        public void deleteStudent(int id)
+        {
+            db.Connection.Open();
+            
+            MySqlCommand deleteLesson = new MySqlCommand("delete from lessonlog where ID = '"+id+"'", db.Connection);
+            deleteLesson.ExecuteNonQuery();
+            MySqlCommand deleteStudent = new MySqlCommand("delete from studentlog where ID = '" + id + "'", db.Connection);
+            deleteStudent.ExecuteNonQuery();
+            db.Connection.Close();
+
+        }
 
 
         public string Username { get => username; set => username = value; }

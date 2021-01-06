@@ -48,6 +48,7 @@ namespace Student_Information_System
             this.label7 = new System.Windows.Forms.Label();
             this.repasswordTextBox = new System.Windows.Forms.TextBox();
             this.warnText = new System.Windows.Forms.Label();
+            this.emailError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -223,12 +224,21 @@ namespace Student_Information_System
             this.warnText.TabIndex = 15;
             this.warnText.Text = "PLEASE ENTER PASSWORD TO UPDATE INFORMATION";
             // 
+            // emailError
+            // 
+            this.emailError.AutoSize = true;
+            this.emailError.Location = new System.Drawing.Point(93, 345);
+            this.emailError.Name = "emailError";
+            this.emailError.Size = new System.Drawing.Size(0, 17);
+            this.emailError.TabIndex = 16;
+            // 
             // UpdateInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Student_Information_System.Properties.Resources.backgroundDefault;
             this.ClientSize = new System.Drawing.Size(612, 510);
+            this.Controls.Add(this.emailError);
             this.Controls.Add(this.warnText);
             this.Controls.Add(this.repasswordTextBox);
             this.Controls.Add(this.label7);
@@ -272,5 +282,6 @@ namespace Student_Information_System
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox repasswordTextBox;
         private System.Windows.Forms.Label warnText;
+        private System.Windows.Forms.Label emailError;
     }
 }

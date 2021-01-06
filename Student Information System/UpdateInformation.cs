@@ -15,6 +15,7 @@ namespace Student_Information_System
         private int id;
         private string password;
         Database db = new Database();
+        RegisterStudent rs = new RegisterStudent();
 
         public int Id { get => id; set => id = value; }
 
@@ -26,7 +27,8 @@ namespace Student_Information_System
         private void UpdateInformation_Load(object sender, EventArgs e)
         {
             warnText.BackColor = System.Drawing.Color.Transparent;
-
+            emailError.BackColor = System.Drawing.Color.Transparent;
+            emailError.ForeColor = System.Drawing.Color.Red;
             db.Connection.Open();
             db.Command.Connection = db.Connection;
             db.Command.CommandText = "Select Phoneno,Email,password,Username,Name,Surname FROM studentlog where ID ='"+Id+"'";
@@ -48,20 +50,32 @@ namespace Student_Information_System
 
         private void updateButton_Click(object sender, EventArgs e)
         {
+            emailError.Hide();
+            warnText.Hide();
             bool control = true;
+            bool emailCheck = rs.checkEmail(mailTextBox.Text);
             if (!(repasswordTextBox.Text.Equals(passwordTextBox.Text)))
             {
                 warnText.Text = "The passwords you entered do not match.";
                 warnText.ForeColor = System.Drawing.Color.Red;
+                warnText.Show();
                 control = false;
             }
             else if (!(password.Equals(passwordTextBox.Text)))
             {
                 warnText.Text = "You entered a wrong password, please try again.";
                 warnText.ForeColor = System.Drawing.Color.Red;
+                warnText.Show();
                 control = false;
             }
-            
+            if (!emailCheck)
+            {
+                control = false;
+                emailError.Show();
+                emailError.Text = "E-mail must be valid format. Like example@gmail.com";
+
+            }
+
             if (control) {
                 db.Connection.Open();
                 db.Command.Connection = db.Connection;
@@ -70,7 +84,9 @@ namespace Student_Information_System
                 db.Connection.Close();
                 warnText.Text = "Information updated succesfully";
                 warnText.ForeColor = System.Drawing.Color.LawnGreen;
+                warnText.Show();
             }
+           
         }
 
         private void phoneTextBox_KeyPress(object sender, KeyPressEventArgs e)
