@@ -128,11 +128,12 @@
             // 
             // LogoPic
             // 
-            this.LogoPic.BackgroundImage = global::Student_Information_System.Properties.Resources.logo72px;
+            this.LogoPic.BackgroundImage = global::Student_Information_System.Properties.Resources.teacher;
+            this.LogoPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.LogoPic.Location = new System.Drawing.Point(50, 25);
             this.LogoPic.Name = "LogoPic";
             this.LogoPic.Size = new System.Drawing.Size(71, 73);
-            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoPic.TabIndex = 7;
             this.LogoPic.TabStop = false;
             // 

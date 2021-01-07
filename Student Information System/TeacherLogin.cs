@@ -21,7 +21,6 @@ namespace Student_Information_System
             LogoPic.BackColor = System.Drawing.Color.Transparent;
             backButton.BackColor = System.Drawing.Color.Transparent;
             loginButton.BackColor = System.Drawing.Color.Transparent;
-            label1.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -34,29 +33,28 @@ namespace Student_Information_System
         private void loginButton_Click(object sender, EventArgs e)
         {
             verifyLogin vl = new verifyLogin();
+            label1.Visible = true;
 
             bool checklog = vl.verifyLogteacher(UsernameBox.Text, PasswordBox.Text);
             if (checklog)
             {
-                label1.Text = "Succesfully.";
-                label1.ForeColor = System.Drawing.Color.LightGreen;
-                label1.Visible = true;
-                TeacherScreen ts = new TeacherScreen
+                label1.Text = "succesfully";
+                int id = vl.TeacherID;
+                String username = UsernameBox.Text;
+
+                TeacherScreen ts = new TeacherScreen()
                 {
-                    teacherName = UsernameBox.Text
+                    teacherId = id
                 };
+
 
                 this.Close();
                 ts.Show();
             }
             else
-            {
-                label1.Visible = true;
-                label1.ForeColor = System.Drawing.Color.Red;
                 label1.Text = "You entered wrong username or password. Please try again.";
-
-            }
-
+            
+           
         }
 
         private void PasswordBox_TextChanged(object sender, EventArgs e)

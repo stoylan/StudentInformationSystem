@@ -12,9 +12,11 @@ namespace Student_Information_System
     {
         Database db = new Database();
         Student student = new Student();
+        Teacher teacher = new Teacher();
         private int studentID;
-
+        private int teacherID;
         public int StudentID { get => studentID; set => studentID = value; }
+        public int TeacherID { get => teacherID; set => teacherID = value; }
 
         public bool verifyLogstudent(string username,string password)
         {
@@ -41,10 +43,14 @@ namespace Student_Information_System
         {
             db.Connection.Open();
             DataTable table = new DataTable();
+            teacher.Username = username;
+            teacher.Password = password;
+
             db.Connector = new MySqlDataAdapter("Select * From teacherlog where Username = '" + username + "' and password = '" + password + "'", db.Connection);
             db.Connector.Fill(table);
             if (table.Rows.Count > 0)
             {
+                TeacherID = teacher.getTeacherid();
                 db.Connection.Close();
                 return true;
             }
